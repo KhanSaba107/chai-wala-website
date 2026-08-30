@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chai Wala</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f5e6d3;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: #6b3e26;
+        }
+
+        p {
+            font-size: 20px;
+            color: #4a2c1a;
+        }
+
+        button {
+            background-color: #6b3e26;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+     h2 {
+    color: #6b3e26;
+    font-size: 35px;
+    margin-top: 60px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+    width: 220px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: #6b3e26;
+    font-size: 22px;
+}
+
+.card h4 {
+    color: #6b3e26;
+    font-size: 20px;
+}
+ #order-section {
+    margin-top: 60px;
+    padding: 40px;
+    background-color: #fff8f0;
+}
+
+#order-section h2 {
+    margin-top: 0;
+}
+
+#order-section input {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#order-section button {
+    margin-top: 10px;
+} 
+nav {
+    background-color: #6b3e26;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h2 {
+    color: white;
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+    <h2>☕ Chai Wala</h2>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#order-section">Order</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+<div id="home">
+
+    <h1>Welcome to Chai Wala ☕</h1>
+
+    <p>Fresh and delicious chai for everyone.</p>
+
+    <img src="chai.jpg" alt="Hot Chai" width="300">
+
+    <br><br>
+
+    <button onclick="goToOrder()">Order Now</button>
+
+</div>
+
+
+<div id="menu">
+
+    <h2>Our Chai Menu</h2>
+
+    <div class="menu">
+    
+    
+
+    <div class="card">
+        <h3>Masala Chai ☕</h3>
+        <p>Classic Indian chai with aromatic spices.</p>
+        <h4>₹30</h4>
+        <button onclick="goToOrder()">Order Now</button>
+    </div>
+
+    <div class="card">
+        <h3>Ginger Chai 🫖</h3>
+        <p>Fresh chai with a delicious ginger flavor.</p>
+        <h4>₹35</h4>
+        <button onclick="goToOrder()">Order Now</button>
+    </div>
+
+    <div class="card">
+        <h3>Elaichi Chai ☕</h3>
+        <p>Refreshing chai with cardamom flavor.</p>
+        <h4>₹35</h4>
+        <button onclick="goToOrder()">Order Now</button>
+    </div>
+    </div>
+
+</div>
+
+<div id="order-section">
+
+
+    <h2>Place Your Order ☕</h2>
+
+ <input type="text" id="name" placeholder="Enter your name"> 
+<br><br>
+
+<input type="text" id="chai" placeholder="Enter your chai">
+<br><br>
+
+<input type="number" id="quantity" placeholder="Enter quantity">
+<br><br>
+
+<button onclick="placeOrder()">Place Order</button>  
+</div>
+<script>
+function goToOrder() {
+    document.getElementById("order-section").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function placeOrder() {
+
+    let name = document.getElementById("name").value;
+    let chai = document.getElementById("chai").value;
+    let quantity = document.getElementById("quantity").value;
+
+    if (name === "" || chai === "" || quantity === "") {
+        alert("Please fill all the details. ☕");
+        return;
+    }
+
+    alert("Thank you " + name + "! Your order for " + quantity + " " + chai + " has been placed successfully. ☕");
+}
+</script>
+<div id="contact">
+    <h2>Contact Us ☕</h2>
+
+    <p>📞 Phone: +91 98765 43210</p>
+
+    <p>📧 Email: chaiwala@gmail.com</p>
+
+    <p>📍 Mumbai, India</p>
+
+    <p>We would love to serve you a hot cup of chai!</p>
+</div>
+</body>
+</html>
